@@ -7,42 +7,37 @@
 //
 
 #import "ViewController.h"
-#import <objc/runtime.h>
+#import "JMSubView.h"
+#import "JMSuperView.h"
+
 
 @interface ViewController ()
 
 @end
 
-@implementation UIViewController
-+ (void)load {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        Class class = [self class];
-        // When swizzling a class method, use the following:
-        // Class class = object_getClass((id)self);
-        SEL originalSelector = @selector(viewWillAppear:);
-        SEL swizzledSelector = @selector(xxx_viewWillAppear:);
-        Method originalMethod = class_getInstanceMethod(class, originalSelector);
-        Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
-        BOOL didAddMethod = class_addMethod(class,
-                                            originalSelector,
-                                            method_getImplementation(swizzledMethod),
-                                            method_getTypeEncoding(swizzledMethod));
-        if (didAddMethod) {
-            class_replaceMethod(class,
-                                swizzledSelector,
-                                method_getImplementation(originalMethod),
-                                method_getTypeEncoding(originalMethod));
-        } else {
-            method_exchangeImplementations(originalMethod, swizzledMethod);
-        }
-    });
+@implementation ViewController
+
+- (void)viewDidLoad
+{
+    
+    /*让子view能接收到事件*/
+    JMSuperView *superView = [[JMSuperView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 200)];
+    superView.userInteractionEnabled = YES;
+    superView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:superView];
+    
+    JMSubView *subView = [[JMSubView alloc] initWithFrame:CGRectMake(0, 300, self.view.bounds.size.width, 200)];
+    subView.userInteractionEnabled = YES;
+    subView.backgroundColor = [UIColor blueColor];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(subViewAction)];
+    [subView addGestureRecognizer:tap];
+    [superView addSubview:subView];
 }
 
-#pragma mark - Method Swizzling
-- (void)xxx_viewWillAppear:(BOOL)animated {
-    [self xxx_viewWillAppear:animated];
-    NSLog(@"viewWillAppear: %@", self);
+- (void)subViewAction
+{
+    NSLog(@"事件接收成功");
 }
+
 @end
 

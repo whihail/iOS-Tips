@@ -14,6 +14,8 @@
 		3E9016F220C9317500FCBA14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E9016F020C9317500FCBA14 /* LaunchScreen.storyboard */; };
 		3E9016F520C9317500FCBA14 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9016F420C9317500FCBA14 /* main.m */; };
 		3E9016FD20C9318500FCBA14 /* NSObject+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9016FC20C9318500FCBA14 /* NSObject+Safe.m */; };
+		3EAAB55120CC065200C69E31 /* JMSuperView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAAB55020CC065200C69E31 /* JMSuperView.m */; };
+		3EAAB55420CC066300C69E31 /* JMSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAAB55320CC066300C69E31 /* JMSubView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,10 @@
 		3E9016F420C9317500FCBA14 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3E9016FB20C9318500FCBA14 /* NSObject+Safe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Safe.h"; sourceTree = "<group>"; };
 		3E9016FC20C9318500FCBA14 /* NSObject+Safe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Safe.m"; sourceTree = "<group>"; };
+		3EAAB54F20CC065200C69E31 /* JMSuperView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMSuperView.h; sourceTree = "<group>"; };
+		3EAAB55020CC065200C69E31 /* JMSuperView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMSuperView.m; sourceTree = "<group>"; };
+		3EAAB55220CC066300C69E31 /* JMSubView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMSubView.h; sourceTree = "<group>"; };
+		3EAAB55320CC066300C69E31 /* JMSubView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMSubView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,10 @@
 				3E9016F020C9317500FCBA14 /* LaunchScreen.storyboard */,
 				3E9016F320C9317500FCBA14 /* Info.plist */,
 				3E9016F420C9317500FCBA14 /* main.m */,
+				3EAAB54F20CC065200C69E31 /* JMSuperView.h */,
+				3EAAB55020CC065200C69E31 /* JMSuperView.m */,
+				3EAAB55220CC066300C69E31 /* JMSubView.h */,
+				3EAAB55320CC066300C69E31 /* JMSubView.m */,
 			);
 			path = Tips;
 			sourceTree = "<group>";
@@ -150,6 +160,8 @@
 				3E9016EA20C9317400FCBA14 /* ViewController.m in Sources */,
 				3E9016F520C9317500FCBA14 /* main.m in Sources */,
 				3E9016E720C9317400FCBA14 /* AppDelegate.m in Sources */,
+				3EAAB55420CC066300C69E31 /* JMSubView.m in Sources */,
+				3EAAB55120CC065200C69E31 /* JMSuperView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
