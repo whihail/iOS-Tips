@@ -16,6 +16,11 @@
 		3E9016FD20C9318500FCBA14 /* NSObject+Safe.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9016FC20C9318500FCBA14 /* NSObject+Safe.m */; };
 		3EAAB55120CC065200C69E31 /* JMSuperView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAAB55020CC065200C69E31 /* JMSuperView.m */; };
 		3EAAB55420CC066300C69E31 /* JMSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAAB55320CC066300C69E31 /* JMSubView.m */; };
+		3EAAB55720CD263200C69E31 /* JMSortUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAAB55620CD263200C69E31 /* JMSortUtil.m */; };
+		3EAAB55E20CE2D4900C69E31 /* JMMultiDelegateTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAAB55D20CE2D4900C69E31 /* JMMultiDelegateTest.m */; };
+		3EAAB56120CE2E2100C69E31 /* GCDMulticastDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAAB55F20CE2E2000C69E31 /* GCDMulticastDelegate.m */; };
+		3EAAB56420CE316400C69E31 /* JMDelegate1.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAAB56320CE316400C69E31 /* JMDelegate1.m */; };
+		3EAAB56720CE317300C69E31 /* JMDelegate2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAAB56620CE317300C69E31 /* JMDelegate2.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +40,16 @@
 		3EAAB55020CC065200C69E31 /* JMSuperView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMSuperView.m; sourceTree = "<group>"; };
 		3EAAB55220CC066300C69E31 /* JMSubView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMSubView.h; sourceTree = "<group>"; };
 		3EAAB55320CC066300C69E31 /* JMSubView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMSubView.m; sourceTree = "<group>"; };
+		3EAAB55520CD263200C69E31 /* JMSortUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMSortUtil.h; sourceTree = "<group>"; };
+		3EAAB55620CD263200C69E31 /* JMSortUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMSortUtil.m; sourceTree = "<group>"; };
+		3EAAB55C20CE2D4900C69E31 /* JMMultiDelegateTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMMultiDelegateTest.h; sourceTree = "<group>"; };
+		3EAAB55D20CE2D4900C69E31 /* JMMultiDelegateTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMMultiDelegateTest.m; sourceTree = "<group>"; };
+		3EAAB55F20CE2E2000C69E31 /* GCDMulticastDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDMulticastDelegate.m; sourceTree = "<group>"; };
+		3EAAB56020CE2E2100C69E31 /* GCDMulticastDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDMulticastDelegate.h; sourceTree = "<group>"; };
+		3EAAB56220CE316400C69E31 /* JMDelegate1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMDelegate1.h; sourceTree = "<group>"; };
+		3EAAB56320CE316400C69E31 /* JMDelegate1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMDelegate1.m; sourceTree = "<group>"; };
+		3EAAB56520CE317300C69E31 /* JMDelegate2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMDelegate2.h; sourceTree = "<group>"; };
+		3EAAB56620CE317300C69E31 /* JMDelegate2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMDelegate2.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +82,8 @@
 		3E9016E420C9317400FCBA14 /* Tips */ = {
 			isa = PBXGroup;
 			children = (
+				3EAAB56020CE2E2100C69E31 /* GCDMulticastDelegate.h */,
+				3EAAB55F20CE2E2000C69E31 /* GCDMulticastDelegate.m */,
 				3E9016FB20C9318500FCBA14 /* NSObject+Safe.h */,
 				3E9016FC20C9318500FCBA14 /* NSObject+Safe.m */,
 				3E9016E520C9317400FCBA14 /* AppDelegate.h */,
@@ -82,6 +99,14 @@
 				3EAAB55020CC065200C69E31 /* JMSuperView.m */,
 				3EAAB55220CC066300C69E31 /* JMSubView.h */,
 				3EAAB55320CC066300C69E31 /* JMSubView.m */,
+				3EAAB55520CD263200C69E31 /* JMSortUtil.h */,
+				3EAAB55620CD263200C69E31 /* JMSortUtil.m */,
+				3EAAB55C20CE2D4900C69E31 /* JMMultiDelegateTest.h */,
+				3EAAB55D20CE2D4900C69E31 /* JMMultiDelegateTest.m */,
+				3EAAB56220CE316400C69E31 /* JMDelegate1.h */,
+				3EAAB56320CE316400C69E31 /* JMDelegate1.m */,
+				3EAAB56520CE317300C69E31 /* JMDelegate2.h */,
+				3EAAB56620CE317300C69E31 /* JMDelegate2.m */,
 			);
 			path = Tips;
 			sourceTree = "<group>";
@@ -157,10 +182,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E9016FD20C9318500FCBA14 /* NSObject+Safe.m in Sources */,
+				3EAAB56420CE316400C69E31 /* JMDelegate1.m in Sources */,
+				3EAAB55720CD263200C69E31 /* JMSortUtil.m in Sources */,
+				3EAAB56720CE317300C69E31 /* JMDelegate2.m in Sources */,
 				3E9016EA20C9317400FCBA14 /* ViewController.m in Sources */,
 				3E9016F520C9317500FCBA14 /* main.m in Sources */,
 				3E9016E720C9317400FCBA14 /* AppDelegate.m in Sources */,
+				3EAAB55E20CE2D4900C69E31 /* JMMultiDelegateTest.m in Sources */,
 				3EAAB55420CC066300C69E31 /* JMSubView.m in Sources */,
+				3EAAB56120CE2E2100C69E31 /* GCDMulticastDelegate.m in Sources */,
 				3EAAB55120CC065200C69E31 /* JMSuperView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

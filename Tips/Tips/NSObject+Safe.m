@@ -59,6 +59,8 @@
         NSObject *object = [[NSObject alloc] init];
         [object swizzleInstanceMethod:@selector(addObserver:forKeyPath:options:context:) withMethod:@selector(hookAddObserver:forKeyPath:options:context:)];
         [object swizzleInstanceMethod:@selector(removeObserver:forKeyPath:) withMethod:@selector(hookRemoveObserver:forKeyPath:)];
+        [object swizzleInstanceMethod:@selector(methodSignatureForSelector:) withMethod:@selector(hookMethodSignatureForSelector:)];
+        [object swizzleInstanceMethod:@selector(forwardInvocation:) withMethod:@selector(hookForwardInvocation:)];
     });
 }
 
@@ -94,6 +96,34 @@
 
         NSLog(@"hookAddObserver ex: %@", [exception callStackSymbols]);
     }
+}
+
+- (NSMethodSignature*)hookMethodSignatureForSelector:(SEL)aSelector {
+    /* 如果 当前类有methodSignatureForSelector实现，NSObject的实现直接返回nil
+     * 子类实现如下：
+     *          NSMethodSignature* sig = [super methodSignatureForSelector:aSelector];
+     *          if (!sig) {
+     *              //当前类的methodSignatureForSelector实现
+     *              //如果当前类的methodSignatureForSelector也返回nil
+     *          }
+     *          return sig;
+     */
+    NSMethodSignature* sig = [self hookMethodSignatureForSelector:aSelector];
+    if (!sig){
+        if (class_getMethodImplementation([NSObject class], @selector(methodSignatureForSelector:))
+            != class_getMethodImplementation(self.class, @selector(methodSignatureForSelector:)) ){
+            return nil;
+        }
+        return [NSMethodSignature signatureWithObjCTypes:"v@:@"];
+    }
+    return sig;
+}
+
+- (void)hookForwardInvocation:(NSInvocation*)invocation
+{
+    NSString* info = [NSString stringWithFormat:@"unrecognized selector [%@] sent to %@", NSStringFromSelector(invocation.selector), NSStringFromClass(self.class)];
+//    [[NSNotificationCenter defaultCenter] postNotificationName:NSSafeNotification object:self userInfo:@{@"invocation":invocation}];
+//    [[NSSafeProxy new] dealException:info];
 }
 
 @end

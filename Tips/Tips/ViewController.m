@@ -9,9 +9,15 @@
 #import "ViewController.h"
 #import "JMSubView.h"
 #import "JMSuperView.h"
-
+#import "JMSortUtil.h"
+#import "JMMultiDelegateTest.h"
+#import "JMDelegate1.h"
+#import "JMDelegate2.h"
 
 @interface ViewController ()
+
+@property(nonatomic, strong) JMDelegate1 *delegate1;
+@property(nonatomic, strong) JMDelegate2 *delegate2;
 
 @end
 
@@ -32,6 +38,19 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(subViewAction)];
     [subView addGestureRecognizer:tap];
     [superView addSubview:subView];
+    
+//    NSMutableArray *array = [[NSMutableArray alloc] initWithObjects:@39, @67, @20, @1, @9, @59, @9, @7, @4, @9, @20, @24, @19, @9, @5, @98, @71, @4, nil];
+//    [JMSortUtil quickSort:array low:0 high:array.count - 1];
+    
+    
+    //测试多播代理和safe冲突问题。
+    JMMultiDelegateTest *test = [[JMMultiDelegateTest alloc] init];
+    _delegate1 = [[JMDelegate1 alloc] init];
+    _delegate2 = [[JMDelegate2 alloc] init];
+    [test addDelegateWith:_delegate1];
+    [test addDelegateWith:_delegate2];
+    [test invokeDelegate];
+    
 }
 
 - (void)subViewAction
